@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MaintainIQ — Asset & Maintenance Platform</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%2314181F%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23E8A23D%22 font-family=%22monospace%22>Q</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">MQ</div>
+      <div class="brand-text">
+        <div class="brand-name">MaintainIQ</div>
+        <div class="brand-sub">Asset Ops Console</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#/" class="nav-link" data-route="/">
+        <span class="nav-ico">▣</span> Dashboard
+      </a>
+      <a href="#/assets" class="nav-link" data-route="/assets">
+        <span class="nav-ico">▤</span> Assets
+      </a>
+      <a href="#/issues" class="nav-link" data-route="/issues">
+        <span class="nav-ico">▧</span> Issues
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <button class="btn-ghost-sidebar" id="btnResetDemo">↺ Reset demo data</button>
+      <div class="foot-note">Track C · Frontend Prototype<br>Data stored in this browser</div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main-col">
+    <header class="topbar">
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+      <div class="topbar-actions" id="topbarActions"></div>
+    </header>
+
+    <main class="view" id="view"></main>
+  </div>
+</div>
+
+<!-- Modal root -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modalBody"></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- Data layer (seed data + localStorage persistence) -->
+<script src="js/data.js"></script>
+
+<!-- Shared utilities -->
+<script src="js/utils/dom.js"></script>
+<script src="js/utils/toast.js"></script>
+<script src="js/utils/modal.js"></script>
+<script src="js/utils/badges.js"></script>
+<script src="js/utils/lookups.js"></script>
+
+<!-- Router -->
+<script src="js/router.js"></script>
+
+<!-- Views -->
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/assets-list.js"></script>
+<script src="js/views/asset-detail.js"></script>
+<script src="js/views/public-asset.js"></script>
+<script src="js/triage.js"></script>
+<script src="js/views/report-issue.js"></script>
+<script src="js/views/issues-list.js"></script>
+<script src="js/views/issue-detail.js"></script>
+
+<!-- Misc actions -->
+<script src="js/reset-demo.js"></script>
+
+<!-- Entry point (must load last) -->
+<script src="js/main.js"></script>
+</body>
+</html>
